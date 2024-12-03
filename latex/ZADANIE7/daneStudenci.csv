@@ -1,0 +1,121 @@
+Lp.,Katalog,Nazwisko,Imię,Wydział,Wiek,Płeć
+1,stud01,Lubaszka,Krzysztof,Matematyki,19,M
+2,stud02,Piwoński ,Robert,Geodezji,19,M
+3,stud03,Galaszewska ,Anna,Automatyki i Robotyki,23,K
+4,stud04,Rogowska,Irena,Matematyki,21,K
+5,stud05,Graczyński ,Jan,Transportu,22,M
+6,stud06,Murawska ,Urszula,Energetyki,22,K
+7,stud07,Andrychowicz,Felicja,Matematyki,23,K
+8,stud08,Wachowicz,Janusz,Geodezji,24,M
+9,stud09,Koszewska,Amanda,Automatyki i Robotyki,21,K
+10,stud10,Czerwiński,Robert,Matematyki,20,M
+11,stud11,Linus,Maciej,Transportu,19,M
+12,stud12,Błażejczyk,Donald,Matematyki,21,M
+13,stud13,Filipowicz,Jolanta,Matematyki,22,K
+14,stud14,Melnik,Jan,Geodezji,21,M
+15,stud15,Soplica,Edward,Transportu,23,M
+16,stud16,Jasiewicz,Czesław,Mechatroniki,24,M
+17,stud17,Kozikowska,Wiesława,Informatyki,24,K
+18,stud18,Załuski,Marek,Zarządzania,24,M
+19,stud19,Słomczyński,Piotr,Zarządzania,24,M
+20,stud20,Semeniuk ,Zygmunt,Fizyki,23,M
+21,stud21,Urbańczyk,Helena,Informatyki,21,K
+22,stud22,Grabowski,Paweł,Energetyki,22,M
+23,stud23,Wojtyra,Wojciech,Automatyki i Robotyki,23,M
+24,stud24,Persiński,Antoni,Energetyki,21,M
+25,stud25,Nadwiślańska,Łucja,Fizyki,22,K
+26,stud26,Mączyńska,Olga,Matematyki,22,K
+27,stud27,Lubańska ,Irena,Matematyki,23,K
+28,stud28,Krawczyk,Zygmunt,Geodezji,24,M
+29,stud29,Hubertus,Marek,Automatyki i Robotyki,21,M
+30,stud30,Mazowiecka,Dagmara,Matematyki,22,K
+31,stud31,Ochocka,Anna,Transportu,21,K
+32,stud32,Niewęgłowski,Krzysztof,Transportu,21,M
+33,stud33,Jędruszczak,Konrad,Matematyki,21,M
+34,stud34,Figura,Izolda,Mechatroniki,21,K
+35,stud35,Terlecki,Oktawian,Elektroniki,23,M
+36,stud36,Zalewski,Augustyn,Matematyki,23,M
+37,stud37,Sienkiewicz,Andrzej,Fizyki,24,M
+38,stud38,Naparstek,Monika,Automatyki i Robotyki,24,K
+39,stud39,Graniecka,Małgorzata,Matematyki,21,K
+40,stud40,Krasiczyńska,Grażyna,Geodezji,22,K
+41,stud41,Damska,Teresa,Zarządzania,22,K
+42,stud42,Gregoruk,Zofia,Matematyki,23,K
+43,stud43,Rosiak,Danuta,Automatyki i Robotyki,23,K
+44,stud44,BReklamaosz,Franciszek,Automatyki i Robotyki,24,M
+45,stud45,Górecki,Henryk,Matematyki,23,M
+46,stud46,Miękus,Joanna,Fizyki,24,K
+47,stud47,Pankiewicz,Iza,Transportu,24,K
+48,stud48,Cieślak,Maria,Energetyki,23,K
+49,stud49,Kowalska,Helena,Geodezji,21,K
+50,stud50,Wanad,Teodor,Matematyki,21,M
+51,stud51,Ciechowska,Natalia,Geodezji,23,K
+52,stud52,Weiss,Róża,Matematyki,20,K
+53,stud53,Bielak,Tadeusz,Transportu,20,M
+54,stud54,Pyza,Andrzej,Matematyki,22,M
+55,stud55,Celejewski,Jerzy,Energetyki,20,M
+56,stud56,Salezy,Dariusz,Matematyki,19,M
+57,stud57,Filipek,Bogdan,Transportu,19,M
+58,stud58,Milewska,Ewa,Matematyki,18,K
+59,stud59,Chrzanowska,Melisa,Elektroniki,19,K
+60,stud60,Duszczyk,Sławomir,Matematyki,20,M
+61,stud61,Kieślowski,Piotr,Transportu,21,M
+62,stud62,Anczewski,Stefan,Zarządzania,22,M
+63,stud63,Wolski,Paweł,Informatyki,21,M
+64,stud64,Dykiel,Teresa,Geodezji,23,K
+65,stud65,Kałuża,Agnieszka,Geodezji,24,K
+66,stud66,Adamiec,Marcin,Automatyki i Robotyki,22,M
+67,stud67,Ostrowska,Barbara,Informatyki,22,K
+68,stud68,Pacuła,Katarzyna,Geodezji,23,K
+69,stud69,Reszczyński,Robert,Informatyki,23,M
+70,stud70,Węgier,Barbara,Fizyki,24,K
+71,stud71,Grzeszczak,Wojciech,Fizyki,21,M
+72,stud72,Janiszewska,Barbara,Elektroniki,21,K
+73,stud73,Beneka,Piotr,Informatyki,20,M
+74,stud74,Szelest,Mieczysława,Automatyki i Robotyki,20,K
+75,stud75,Chojnacki,Lesław,Zarządzania,23,M
+76,stud76,Mianowska,Wanda,Elektroniki,20,K
+77,stud77,Feler,Izabela,Informatyki,20,K
+78,stud78,Jasińska,Barbara,Automatyki i Robotyki,21,K
+79,stud79,Ciechowska,Monika,Automatyki i Robotyki,22,K
+80,stud80,Mikołajczyk,Grażyna,Fizyki,20,K
+81,stud81,Siedlecki,Daniel,Mechatroniki,21,M
+82,stud82,Wolej,Aneta,Informatyki,24,K
+83,stud83,Zach,Karolina,Fizyki,23,K
+84,stud84,Barcisz,Patrycja,Geodezji,24,K
+85,stud85,Miejska,Ewelina,Zarządzania,21,K
+86,stud86,Szafrańska,Zofia,Informatyki,22,K
+87,stud87,Dziwulski,Juliusz,Automatyki i Robotyki,24,M
+88,stud88,Dudek,Izabela,Geodezji,23,K
+89,stud89,Hardy,Benedykt,Fizyki,21,M
+90,stud90,Pieńkowski,Dariusz,Informatyki,20,M
+91,stud91,Lechowicz,Stanisław,Automatyki i Robotyki,20,M
+92,stud92,Jasińska,Janina,Geodezji,21,K
+93,stud93,Zambrowicz,Romuald,Energetyki,22,M
+94,stud94,Rosiewicz,Olgierd,Matematyki,23,M
+95,stud95,Siennicki,Mikołaj,Automatyki i Robotyki,24,M
+96,stud96,Anioł,Grzegorz,Informatyki,23,M
+97,stud97,Lichwiarz,Janusz,Mechatroniki,22,M
+98,stud98,Boroński,Jerzy,Matematyki,21,M
+99,stud99,Sękocińska,Elwira,Mechatroniki,23,K
+100,stud100,Kadej,Michał,Mechatroniki,23,M
+101,stud101,Górski,Aleksander,Informatyki,20,M
+102,stud102,Kacprzak,Krzysztof,Energetyki,20,M
+103,stud103,Kopernik,Wiesław,Matematyki,21,M
+104,stud104,Sobiecka ,Renata,Energetyki,20,K
+105,stud105,Nowak,Marek,Automatyki i Robotyki,20,M
+106,stud106,Kłosiński,Cezary,Informatyki,21,M
+107,stud107,Tkaczyk,Zygmunt,Informatyki,22,M
+108,stud108,Fedoruk,Dorota,Matematyki,24,K
+109,stud109,Śliwińska,Zuzanna,Fizyki,23,K
+110,stud110,Leszczyńska,Maryla,Automatyki i Robotyki,21,K
+111,stud111,Baranowska,Maria,Mechatroniki,22,K
+112,stud112,Zalesiak,Mieczysław,Informatyki,21,M
+113,stud113,Pszczoła,Stefan,Automatyki i Robotyki,23,M
+114,stud114,Żukowski,Joe,Fizyki,23,M
+115,stud115,Figura,Michał,Automatyki i Robotyki,21,M
+116,stud116,Figura,Adam,Informatyki,22,M
+117,stud117,Figura,Adam,Informatyki,22,M
+118,stud118,Figura,Iza,Informatyki,21,K
+119,stud119,Figura,Barbara,Matematyki,20,K
+120,stud120,Miska,Włodzimierz,Matematyki,21,M
