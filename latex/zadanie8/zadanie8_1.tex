@@ -1,0 +1,44 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{latexsym}
+
+\usepackage[utf8]{inputenc}
+\usepackage{polski}
+
+\usepackage[margin=2cm]{geometry}
+
+\usepackage{xcolor}
+\usepackage{tabularray}
+
+\begin{document}
+	
+	\begin{tabular}{lccr}
+		\hline
+		Alpha & Beta & Gamma & Delta \\
+		\hline
+		Epsilon & Zeta & Eta & Theta \\
+		\hline
+		Iota & Kappa & Lambda & Mu \\
+		\hline
+	\end{tabular}
+	
+	\begin{tblr}{colspec={Q[l,brown7]Q[c,yellow7]Q[r,olive7]},rowspec={|Q|Q|Q|}}
+		Alpha & Beta & Gamma \\
+		Epsilon & Zeta & Eta \\
+		Iota & Kappa & Lambda \\
+	\end{tblr}
+	
+	
+	\begin{tblr}{hlines, vlines}
+		Poniedziałek & Miernictwo i systemy pomiarowe & Aparatura Przemysłowa & Podstawy inżynierii mechanicznej(lab)	\\
+		Wtorek & Podstawy inżynierii mechanicznej (wyk) & Systemy operacyjne (wyk) & Systemy operacyjne (lab) & Cyfrowa dokumentacja techniczna	\\
+		Środa & Język angielski B2 & Programowanie obiektowe (wyk) & Programowanie obiektowe (lab)	\\
+		Czwartek & Relacyjne bazy danych (lab) & Relacyjne bazy danych (wyk) & Język angielski B2	\\
+		Piątek
+		
+	\end{tblr}
+	
+	
+\end{document}

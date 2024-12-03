@@ -1,0 +1,257 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{polski}
+\usepackage{amsmath}
+
+\usepackage[margin=2cm]{geometry}
+\usepackage{tabularx}
+
+
+
+
+\usepackage{rotating}
+\usepackage[official,right]{eurosym}
+%\usepackage[font=small,labelfont=bf,tableposition=top]{caption}
+\usepackage{array,booktabs}
+\usepackage{ragged2e}
+
+
+\begin{document}
+\textbf{Przykład 1.} \\
+
+\begin{tabular}{rlcrrrcc}
+Position & Club & Games & W & T & L & Goals & Points \\ [0.2ex]
+1 & Amesville Rockets & 33 & 19 & 13 & 1 & 66:31 & 51:15 \\
+2 & Borden Comets & 33 & 18 & 9 & 6 & 65:37 & 45:21 \\
+3 & Clarkson Changers & 33 & 17 & 7 & 9 & 70:44 & 41:25 \\
+4 & Gatsby Tigers & 33 & 15 & 7 & 11 & 52:37 & 37:29 \\
+5 & Quincy Gians & 33 & 7 & 5 & 21 & 40:89 & 19:47\\
+6 & Ralston Regulars & 33 & 3 & 11 & 19 & 37:74 & 17:49
+\end{tabular}
+\vspace{.5cm}
+
+\textbf{Przykład 2.}\\
+
+\begin{tabular}{rlc*{3}{|r}cc}
+Position & Club & Games & W & T & L & Goals & Points \\ [0.2ex]
+1 & Amesville Rockets & 33 & 19 & 13 & 1 & 66:31 & 51:15 \\
+2 & Borden Comets & 33 & 18 & 9 & 6 & 65:37 & 45:21 \\
+3 & Clarkson Changers & 33 & 17 & 7 & 9 & 70:44 & 41:25 \\
+4 & Gatsby Tigers & 33 & 15 & 7 & 11 & 52:37 & 37:29 \\
+5 & Quincy Gians & 33 & 7 & 5 & 21 & 40:89 & 19:47\\
+6 & Ralston Regulars & 33 & 3 & 11 & 19 & 37:74 & 17:49
+\end{tabular}
+\vspace{.5cm}
+
+\textbf{Przykład 3.} Pionowe i poziome linie w tabeli.\\
+
+
+\begin{tabular}{||r|l|c|r|r|r|c|c||}\hline
+Position & Club & Games & W & T & L & Goals & Points \\\hline
+1 & Amesville Rockets & 33 & 19 & 13 & 1 & 66:31 & 51:15 \\\hline
+2 & Borden Comets & 33 & 18 & 9 & 6 & 65:37 & 45:21 \\\hline
+3 & Clarkson Changers & 33 & 17 & 7 & 9 & 70:44 & 41:25 \\\hline
+4 & Gatsby Tigers & 33 & 15 & 7 & 11 & 52:37 & 37:29 \\\hline
+5 & Quincy Gians & 33 & 7 & 5 & 21 & 40:89 & 19:47\\\hline
+6 & Ralston Regulars & 33 & 3 & 11 & 19 & 37:74 & 17:49\\
+\hline
+\end{tabular}
+\vspace{.5cm}
+
+\textbf{Przykład 4.} Tabela o zadanej szerokości. Użycie wypełnienia.\\
+
+\begin{tabular*}{14cm}{rlcrrrc@{\extracolsep{\fill}}c}
+Position & Club & Games & W & T & L & Goals & Points \\ [0.2ex]
+1 & Amesville Rockets & 33 & 19 & 13 & 1 & 66:31 & 51:15 \\
+2 & Borden Comets & 33 & 18 & 9 & 6 & 65:37 & 45:21 \\
+3 & Clarkson Changers & 33 & 17 & 7 & 9 & 70:44 & 41:25 \\
+4 & Gatsby Tigers & 33 & 15 & 7 & 11 & 52:37 & 37:29 \\
+5 & Quincy Gians & 33 & 7 & 5 & 21 & 40:89 & 19:47\\
+6 & Ralston Regulars & 33 & 3 & 11 & 19 & 37:74 & 17:49
+\end{tabular*}
+\vspace{.5cm}
+
+
+\vspace{.5cm}
+\textbf{Przykład 8.} Wstawianie w kolumnie dłuższego tekstu.
+\vspace{.5cm}
+
+\begin{tabular}{rlcrrrcp{2cm}c}
+Position & Club & Games & W & T & L & Goals & Punkty zdobyte we wszystkich meczach \\ [0.2ex]
+1 & Amesville Rockets & 33 & 19 & 13 & 1 & 66:31 & 51:15 \\
+2 & Borden Comets & 33 & 18 & 9 & 6 & 65:37 & 45:21 \\
+3 & Clarkson Changers & 33 & 17 & 7 & 9 & 70:44 & 41:25 \\
+4 & Gatsby Tigers & 33 & 15 & 7 & 11 & 52:37 & 37:29 \\
+5 & Quincy Gians & 33 & 7 & 5 & 21 & 40:89 & 19:47\\
+6 & Ralston Regulars & 33 & 3 & 11 & 19 & 37:74 & 17:49
+\end{tabular}
+
+\vspace{.5cm}
+\textbf{Przykład 9.} Scalanie komórek.
+\vspace{.5cm}
+
+\begin{tabular}{llccll}
+Nazwa owocu & Kolor & Gatunek & Kształt & Waga & Cena za kg \\
+Jabłka & żółte & I & kulisty & 20 dkg. & 3 zł.\\
+Jabłka & czerwone & II & kulisty & 15 dkg. & 2.50 zł.\\
+Gruszki & żółte &\multicolumn{2}{c}{trudno określić} & 25 dkg. & 3.50 zł.\\
+Gruszki & czerwone & I & wydłużony & 18 dkg. & 4 zł.
+\end{tabular}
+
+\vspace{.5cm}
+
+\begin{tabular}{llccll}
+Nazwa owocu & Kolor & Gatunek & Kształt & Waga/szt. & Cena za kg \\
+Jabłka & żółte & I & kulisty & 20 dkg. & 3 zł.\\
+Jabłka & czerwone & II & kulisty & 15 dkg. & 2.50 zł.\\
+\multicolumn{6}{c}{Inne owoce sezonowe} \\
+Śliwki & czerwone & I & wydłużony & 5 dkg. & 4 zł.
+\end{tabular}
+
+\vspace{2cm}
+
+\begin{center}
+\begin{tabular}{|r|l||rrr|r|r||c|} \hline
+\multicolumn{8}{|c|}{\bfseries 1st Regional Soccer League --- 
+Final Results 1994/95}\\ \hline
+&\itshape Club &\itshape W 
+&\multicolumn{2}{c|}{\itshape Goals}
+&\multicolumn{2}{c||}{\itshape Points}
+& \itshape Remarks \\ \hline \hline
+1 & Amesville Rockets & 19  & 66&31 & 51&15 & League Champs \\ 
+\hline
+2 & Borden Comets & 18 &  65&37 & 45&21 & \\ 
+\cline{1-8}
+3 & Clarkson Changers & 17 & 70&44 & 41&25 & Medium Teams\\ 
+\cline{1-8}
+4 & Gatsby Tigers & 15 & 52&37 & 37&29 & \\ 
+\hline
+5 & Quincy Gians & 7  & 40&89 & 19&47 & \\ 
+\hline
+6 & Ralston Regulars & 3  & 37&74 & 17&49 & The last one \\
+\hline
+\end{tabular}
+\end{center}
+
+
+\textbf{Przykład.} Potrzebne pakiety \verb|ragged2e|.\\
+\begin{center}
+{
+	\newcolumntype{S}[1]{>{\Centering}m{#1}}
+	\renewcommand{\arraystretch}{1.4}
+	\begin{tabular}{|*{7}{S{1.2cm}|}}\hline
+		\makebox(0,-10){\parbox{1.2cm}{\centering Green Die}} 
+		& \multicolumn{6}{c|} {Red Die} \\\cline{2-7}
+		& 1 & 2 & 3 & 4 & 5 & 6\\ \hline
+		1& 1+1=2&&&&&\\\hline
+		2&&&&&&\\\hline
+		3&&&&&&\\\hline
+		4&&&&&&\\\hline
+		5&&&&&&\\\hline
+		6&&&&&&\\\hline
+	\end{tabular}
+}
+\end{center}
+
+
+\textbf{Przykład.} Potrzebne pakiety \verb|array,booktabs|.\\
+\begin{center}
+	\centering
+	\small
+	\begin{tabular}{p{0.7in}p{0.7in}p{1.3in}cc>{\centering\arraybackslash}p{1in}}\toprule
+		\textbf{A} & \textbf{P} & \textbf{T} & \textbf{C} & \textbf{TC} & \textbf{S}\\ \midrule
+		--- & 24 & 3900 & $\boldsymbol{24\times 375=9000}$ & 12900 & --- \\ \bottomrule
+	\end{tabular}
+\end{center}
+
+
+
+\textbf{Przykład.} Potrzebne pakiety \verb|array,booktabs|.\\
+\begin{center}
+	\centering
+	\small
+	\begin{tabular}{p{0.7in}p{0.7in}p{1.3in}cc>{\centering}p{1in}}
+		\toprule 
+		\textbf{A} & \textbf{P} & \textbf{T} & \textbf{C} & \textbf{TC} & \textbf{S}\tabularnewline \midrule
+		- & 24 & 3900 & $24\times 375=9000$ & 12900 & -\tabularnewline \bottomrule
+	\end{tabular}
+\end{center}
+
+
+\begin{center}
+		\begin{tabular}{l p{.5cm} p{4cm} p{.5cm} l}
+			\hline\noalign{\smallskip}
+			Level & & Problems & & Methods/KB \\
+			\noalign{\smallskip} 
+			\hline
+			\noalign{\smallskip} 
+			Lexical
+			& &
+			Part of speech (POS) tagging
+			& &
+			\parbox[t]{5cm}{
+				\raggedright
+				Part of speech tagger\break
+				Corpora: WSJ, Brown Corpus\\
+			}
+			\\ \\
+			Syntactic
+			& &
+			Generation of parse-trees representing syntactic structure of
+			sentence
+			& &
+			\parbox[t]{5cm}{
+				\raggedright
+				Probabilistic parsers\break
+				Corpora: WSJ, Brown Corpus\\
+			}				
+			\\ \\
+			Semantic
+			& &
+			Reference resolution; Context modeling; Word-Sense Disambiguation
+			& &
+			\parbox[t]{5cm}{
+				\raggedright
+				Semantic parsers, WSD Classifiers;\break
+				Corpora: FrameNet, SENSEVAL\\
+			}
+			\\ \\
+			Pragmatic
+			& &
+			Goal, content or topic of a text or discourse; Anaphora Resolution
+			& &
+			\parbox[t]{5cm}{
+				\raggedright
+				Text summarization;\break
+				Text categorization\break
+				Corpora: WordNet, SummBank
+			}
+			\\
+			\hline
+		\end{tabular}
+	\end{center}
+
+
+
+\vspace{.5cm}
+\textbf{Przykład 8.} Potrzebny pakiet \verb|rotating|.
+\vspace{.5cm}
+\begin{sidewaystable}
+	\caption{Unit values for accidents for different network types in (\euro ct/vkm) for passenger cars, motor cycles and heavy duty vehicles (\EUR{2000})}
+	\label{tab:UnitValuesForAccidentsForDifferentNetworkTypesInCtVkmForPassengerCarsMotorCyclesAndHeavyDutyVehicles2000}
+	\centering
+	\tiny
+	\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|} \hline
+		& & Urban roads & Motorways & Other roads & Urban roads & Motorways & Other roads & Urban roads & Motorways & Other roads\\
+		\hline
+		& & \euro ct/vkm & \euro ct/vkm & \euro ct/vkm & \euro ct/vkm & \euro ct/vkm & \euro ct/vkm & \euro ct/vkm & \euro ct/vkm & \euro ct/vkm\\\hline
+		Austria & 5.7 & 0.41 & 2.17 & 41.92 & 0.27 & 7.46 & 14.51 & 0.41 & 3.66& \\
+		(-0.41-8.95) & (-0.68-0.68) & (-2.58-3.53) & (-2.58-119.64) & (-0.81-0.81) & (-15.06-21.16) & (-0.54-19.26) & (-0.41-0.41) & (-3.53-4.88)&&\\\hline
+	\end{tabular}
+\end{sidewaystable}
+
+
+
+
+\end{document}

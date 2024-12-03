@@ -1,0 +1,60 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{latexsym}
+
+\usepackage[utf8]{inputenc}
+\usepackage{polski}
+
+\usepackage[margin=2cm]{geometry}
+
+\newcommand{\wydzial}{\textbf{Wydział Budownictwa, Mechaniki i Petrochemii}}
+
+\newcommand{\kierunek}[1]{\textbf{\textsf{ #1 }}}
+
+\newcommand{\student}[3]{%
+Imię i nazwisko: \textbf{#1 #2}	\\
+Liczba punktów ECTS: \textsf{#3}\\	
+}
+
+\begin{document}
+	\noindent
+	{\tiny tekst normalny}			\\
+	{\scriptsize tekst normalny}	\\
+	{\footnotesize tekst normalny}	\\
+	{\small tekst normalny}			\\
+	tekst normalny					\\
+	{\large tekst normalny}			\\
+	{\Large tekst normalny}			\\
+	{\LARGE tekst normalny}			\\
+	{\huge tekst normalny}			\\
+	{\Huge tekst normalny}			\\
+	
+	\noindent
+	\textbf{tekst pogrubiony}		\\
+	\textsf{tekst bezszeryfowy}		\\
+	\textit{tekst italic}			\\
+	\textsl{tekst pochylony}		\\
+	\texttt{tekst maszynowy}		\\
+	\underline{tekst podkreślony}	\\
+	
+	\begin{center}
+		{\Large \textbf{Tekst powiększony pogrubiony}}
+	\end{center}
+	\begin{center}
+		{\textbf{\Large Tekst powiększony pogrubiony}}
+	\end{center}
+	\begin{center}
+		{\Large \textbf{\textsf{Tekst powiększony pogrubiony}}}
+	\end{center}
+	
+	\noindent
+	\wydzial	\\
+	\kierunek{Przemysłowe Zastosowania Informatyki}	\\
+	\kierunek{Ekonomia}	\\
+	\student{Janusz}{Kowalski}{34}\\
+	\student{Anna}{Marzec}{31}\\
+	
+\end{document}
+
