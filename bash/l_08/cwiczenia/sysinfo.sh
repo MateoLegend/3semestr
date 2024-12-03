@@ -1,60 +1,106 @@
 #!/bin/bash
 
-Cpu(){
-    echo "CPU: "
-    lscpu | grep "Nazwa modelu:" | sed -r 's/Nazwa modelu:\s{1,}//g'
+get_cpu(){
+    echo "CPU: $(lscpu | awk -F ': ' '/Nazwa modelu/ {print $2}')"
 }
 
-Memory(){
-    echo "Memory :"
-    free -m | grep "Pamięć:" | awk '{print $3 "/" $2 "MiB (" ($3/$2)*100 "% used)"}'
-    free -m | grep "Memory:" | awk '{print $3 "/" $2 "MiB (" ($3/$2)*100 "% used)"}'
-    
+get_memory(){
+    used=$(free -m | awk '/Pamięć:/ {print $3}')
+    total=$(free -m | awk '/Pamięć:/ {print $2}')
+    percent=$((used*100/total))
+    echo "Memory: ${used} / ${total} MiB (${percent}% used)"
 }
 
-Load(){
-
+get_load(){
+    echo "Load: $(uptime | awk -F 'load average:' '{print $2}' | xargs)"
 }
 
-Uptime(){
-    echo "Uptime: "
-    uptime -p
+get_uptime(){
+    echo "Uptime: $(uptime -p)"
 }
 
-Kernel(){
-    echo "Kernel: "
-    uname -r
+get_kernel(){
+    echo "Kernel: $(uname -r)"
 }
 
-Gpu(){
-
+get_gpu(){
+    echo "GPU: $(lspci | grep -i vga | awk -F ': ' '{print $2}')"
 }
 
-User(){
-    echo "User: "$USER
+get_user(){
+    echo "User: $USER"
 }
 
-Shell(){
-
+get_shell(){
+    echo "Shell: $SHELL"
 }
 
-Processes(){
-
+get_processes(){
+    echo "Processes: $(ps -e --no-headers | wc -l)"
 }
 
-Threads(){
-
+get_threads(){
+    echo "Threads: $(ps -eLf --no-headers | wc -l)"
 }
 
-Ip(){
-
+get_ip(){
+    echo "IP: $(hostname -I)"
 }
 
-Dns(){
-
+get_dns(){
+    echo "DNS: $(awk '/^nameserver/ {print $2}' /etc/resolv.conf | tr '\n' ' ')"
 }
 
-Internet(){
-
+get_internet(){
+    if ping -c 1 -w 8.8.8.8 &>/dev/null; then
+        echo "Internet: OK"
+    else
+        echo "Internet: FAIL"
+    fi
 }
 
+# wywoływanie informacji
+
+# wszystkie
+
+show_all() {
+    get_cpu
+    get_memory
+    get_load
+    get_uptime
+    get_kernel
+    get_gpu
+    get_user
+    get_shell
+    get_processes
+    get_threads
+    get_ip
+    get_dns
+    get_internet
+}
+
+# po argumentach
+
+if [[ $# -eq 0 ]]; then
+    show_all
+else
+    for arg in "$@"; do
+            case "${arg,,}" in
+            cpu) get_cpu ;;
+            memory) get_memory ;;
+            load) get_load ;;
+            uptime) get_uptime ;;
+            kernel) get_kernel ;;
+            gpu) get_gpu ;;
+            user) get_user ;;
+            shell) get_shell ;;
+            processes) get_processes ;;
+            threads) get_threads ;;
+            ip) get_ip ;;
+            dns) get_dns ;;
+            internet) get_internet ;;
+            *) echo "Invalid argument: $arg"; exit 1 ;;
+        esac
+    done
+fi
+exit 0
