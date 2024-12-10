@@ -1,0 +1,73 @@
+#!/bin/bash
+
+if [ "$#" -lt 1 ]; then
+    echo "Usage: $0 directory1 [directory2 ...]"
+    exit 1
+fi
+
+compressors=("gzip" "bzip2" "xz" "zstd" "lz4" "7z")
+tmp_dir=$(mktemp -d)
+
+cleanup() {
+    rm -rf "$tmp_dir"
+}
+trap cleanup EXIT
+
+for dir in "$@"; do
+    if [ ! -d "$dir" ]; then
+        echo "Directory $dir does not exist. Skipping."
+        continue
+    fi
+
+    echo "$dir"
+    echo -e "name\tcompress\tdecompress\tratio"
+
+    tar_file="$tmp_dir/archive.tar"
+    tar cvf "$tar_file" -C "$dir" . > /dev/null 2>&1
+    original_size=$(stat -c%s "$tar_file")
+
+    for compressor in "${compressors[@]}"; do
+        compressed_file="$tmp_dir/archive.tar.$compressor"
+        decompressed_file="$tmp_dir/decompressed.tar"
+
+        # Kompresja
+        start=$(date +%s.%N)
+        case $compressor in
+            gzip) gzip -k "$tar_file" -c > "$compressed_file" ;;
+            bzip2) bzip2 -k "$tar_file" -c > "$compressed_file" ;;
+            xz) xz -k "$tar_file" -c > "$compressed_file" ;;
+            zstd) zstd -k "$tar_file" -o "$compressed_file" ;;
+            lz4) lz4 -k "$tar_file" "$compressed_file" ;;
+            7z) 7z a -si "$compressed_file" < "$tar_file" > /dev/null 2>&1 ;;
+        esac
+        end=$(date +%s.%N)
+        compress_time=$(echo "$end - $start" | bc -l)
+
+        # Rozmiar skompresowanego pliku
+        compressed_size=$(stat -c%s "$compressed_file" 2>/dev/null || echo 0)
+        if [ "$compressed_size" -eq 0 ]; then
+            continue
+        fi
+
+        # Dekompresja
+        start=$(date +%s.%N)
+        case $compressor in
+            gzip) gzip -d -c "$compressed_file" > "$decompressed_file" ;;
+            bzip2) bzip2 -d -c "$compressed_file" > "$decompressed_file" ;;
+            xz) xz -d -c "$compressed_file" > "$decompressed_file" ;;
+            zstd) zstd -d "$compressed_file" -o "$decompressed_file" ;;
+            lz4) lz4 -d "$compressed_file" "$decompressed_file" ;;
+            7z) 7z x -so "$compressed_file" > "$decompressed_file" > /dev/null 2>&1 ;;
+        esac
+        end=$(date +%s.%N)
+        decompress_time=$(echo "$end - $start" | bc -l)
+
+        # Obliczenie stosunku kompresji
+        ratio=$(echo "scale=2; 100 * $compressed_size / $original_size" | bc)
+
+        echo -e "$compressor\t$compress_time\t$decompress_time\t$ratio%"
+        rm -f "$compressed_file" "$decompressed_file"
+    done
+
+    rm -f "$tar_file"
+done
