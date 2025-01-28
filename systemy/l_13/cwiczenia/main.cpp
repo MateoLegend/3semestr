@@ -59,10 +59,9 @@ public:
         }
     }
 
-    // Uruchomienie algorytmu Round Robin
+    // Uruchomienie algorytmu
     void run() {
         while (true) {
-            // Dodaj procesy, które powinny zacząć działać w danym momencie
             for (auto& process : allProcesses) {
                 if (process->start == currentTime) {
                     std::cout << "T=" << currentTime << ": New process ";
@@ -71,17 +70,15 @@ public:
                     readyQueue.push(process);
                 }
             }
-
             // Jeśli kolejka procesów gotowych jest pusta, kończymy działanie
             if (readyQueue.empty()) {
                 std::cout << "T=" << currentTime << ": No processes currently available\n";
                 break;
             }
-
             // Wybieramy proces z kolejki gotowych do uruchomienia
             Process* currentProcess = readyQueue.front();
             readyQueue.pop();
-
+            
             // Uruchamiamy proces przez kwant czasu lub do jego zakończenia
             int runTime = std::min(quantum, currentProcess->length);
             std::cout << "T=" << currentTime << ": " << "P" << currentProcess->name
